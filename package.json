@@ -24,6 +24,7 @@
     "@typescript-eslint/parser": "^5.33.1",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "next": "12.2.5",
+    "open-color": "^1.9.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.5"
