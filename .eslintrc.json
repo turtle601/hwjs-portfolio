@@ -30,7 +30,7 @@
     }
   },
 
-  "ignorePatterns": ["jest.config.js", "next.config.js", "build", "dist", "public"],
+  "ignorePatterns": ["jest.config.js", "jest.setup.js", "next.config.js", "build", "dist", "public"],
 
   "rules": {
     // General
