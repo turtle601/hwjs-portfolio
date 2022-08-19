@@ -63,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: inherit; 
     color : inherit;
   }
-  
+
   *,
   *::before,
   *::after {
