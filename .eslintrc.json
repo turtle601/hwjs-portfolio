@@ -112,5 +112,26 @@
     "react/jsx-props-no-spreading": "off", // props에 Spread 연산자 사용 유무
     "react/function-component-definition": "off", // 함수 정의 시 arrow or 선언
     "react/require-default-props": "off"
-  }
+  },
+
+  "overrides": [
+    {
+      "files": "**/*.+(ts|tsx)",
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "extends": ["plugin:@typescript-eslint/recommended"]
+    },
+    {
+      "files": ["**/__tests__/**/*", "**/*.{spec,test}.*"],
+      "env": {
+        "jest/globals": true
+      },
+      "plugins": ["jest", "jest-dom", "testing-library"],
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react"
+      ]
+    }
+  ]
 }
