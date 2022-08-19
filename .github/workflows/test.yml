@@ -1,0 +1,28 @@
+name: Test Code Check
+
+on:
+  pull_request:
+    branches: 
+    - "develop"
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    
+    name: Code Check
+
+    steps:
+    - uses: actions/checkout@v3
+
+    # yarn install
+    - name : Install Dependencies 
+      run: yarn install --immutable --immutable-cache --check-cache
+      
+    # eslint 테스트
+    - name : eslint --check
+      run : yarn lint
+
+    # test code 테스트
+    - name : jest test
+      run : yarn test:ci
