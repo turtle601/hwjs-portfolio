@@ -21,7 +21,7 @@ jobs:
     
     # 해당 프로젝트에서 사용하는 모든 라이브러리 설치
     - name : Install Dependencies
-      run: yarn install
+      run: yarn install --immutable --immutable-cache --check-cache
       
     # React 프로젝트 빌드
     - name : Build Next Application
