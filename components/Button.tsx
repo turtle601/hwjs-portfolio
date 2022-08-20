@@ -61,7 +61,7 @@ const StyledLink = styled.a`
   ${buttonStyle}
 `;
 
-export const Button = (props: ButtonProps & ReactProps) => {
+const Button = (props: ButtonProps & ReactProps) => {
   const { variant, children } = props;
 
   return ((variant !== 'link')
@@ -69,3 +69,5 @@ export const Button = (props: ButtonProps & ReactProps) => {
     : <StyledLink {...props}>{children}</StyledLink>
   );
 };
+
+export default Button;

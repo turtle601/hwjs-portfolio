@@ -5,7 +5,8 @@ import oc from 'open-color';
 
 import { shadow, media, sizes } from '@/components/stylesheets/utils';
 import { ReactProps } from '@/types/common.types';
-import { Button } from './Button';
+
+import Button from '@/components/Button';
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -74,8 +75,8 @@ const Header: React.FC<ReactProps> = () => {
           <Spacer />
           <BtnNavbar>
             <Button href="/" variant="link" colorScheme={oc.cyan[6]}>홈</Button>
-            <Button href="/" variant="link" colorScheme={oc.cyan[6]}>프로젝트</Button>
-            <Button href="/" variant="link" colorScheme={oc.cyan[6]}>연결하기</Button>
+            <Button href="/project" variant="link" colorScheme={oc.cyan[6]}>프로젝트</Button>
+            <Button href="/connect" variant="link" colorScheme={oc.cyan[6]}>연결하기</Button>
             <Button variant="solid" colorScheme={oc.cyan[6]}>다크모드 버튼</Button>
           </BtnNavbar>
         </HeaderContents>
