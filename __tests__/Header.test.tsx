@@ -3,8 +3,8 @@ import oc from 'open-color';
 import '@testing-library/jest-dom';
 
 import { render, screen } from '@testing-library/react';
-import Header from '@/components/Header';
-import Button from '@/components/Button';
+import Header from '@/components/common/Header';
+import Button from '@/components/common/Button';
 
 describe('<Header />', () => {
   it('로고 텍스트 확인하기', () => {

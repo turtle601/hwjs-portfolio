@@ -6,7 +6,7 @@ import oc from 'open-color';
 import { shadow, media, sizes } from 'lib/stylesheets/utils';
 import { ReactProps } from '@/types/common.types';
 
-import Button from '@/components/Button';
+import Button from '@/components/common/Button';
 
 const HeaderContainer = styled.div`
   display: flex;
