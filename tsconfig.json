@@ -5,6 +5,7 @@
       "@/components/*" : ["components/*"],
       "@/pages/*" : ["pages/*"],
       "@/types/*" : ["types/*"],
+      "@/stylesheets/*": ["lib/stylesheets/*"]
     },
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],

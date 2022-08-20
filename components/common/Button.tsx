@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled, { css } from 'styled-components';
 
-import { shadow } from '../../lib/stylesheets/utils';
+import { shadow } from '@/stylesheets/utils';
 import { ReactProps } from '@/types/common.types';
 
 type ButtonProps = {

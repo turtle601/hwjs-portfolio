@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
-import { shadow, media, sizes } from 'lib/stylesheets/utils';
+import { shadow, sizes, media } from '@/stylesheets/utils';
 import { ReactProps } from '@/types/common.types';
 
 import Button from '@/components/common/Button';
