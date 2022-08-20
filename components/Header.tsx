@@ -5,6 +5,7 @@ import oc from 'open-color';
 
 import { shadow, media, sizes } from '@/components/stylesheets/utils';
 import { ReactProps } from '@/types/common.types';
+import { Button } from './Button';
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -22,7 +23,7 @@ const WhiteBackground = styled.div`
   height: auto;
 `;
 
-const HeaderContents = styled.nav`
+const HeaderContents = styled.header`
   width: ${sizes.wide};
   height: 55px;
   display: flex;
@@ -38,6 +39,7 @@ const HeaderContents = styled.nav`
 `;
 
 const Logo = styled.h1`
+  white-space: nowrap;
   font-size: 1.4rem;
   letter-spacing: 2px;
   color: ${oc.teal[7]};
@@ -53,14 +55,29 @@ const GradientBorder = styled.div`
   background: linear-gradient(to right, ${oc.teal[6]}, ${oc.cyan[5]});
 `;
 
-const Header: React.FC<ReactProps> = ({ children }) => {
+const BtnNavbar = styled.nav`
+  a + a {
+    margin-left: 1.5rem;
+  }
+
+  a + button {
+    margin-left: 1.5rem;
+  }
+`;
+
+const Header: React.FC<ReactProps> = () => {
   return (
     <HeaderContainer>
       <WhiteBackground>
         <HeaderContents>
           <Logo>준승 potofolio</Logo>
           <Spacer />
-          { children }
+          <BtnNavbar>
+            <Button href="/" variant="link" colorScheme={oc.cyan[6]}>홈</Button>
+            <Button href="/" variant="link" colorScheme={oc.cyan[6]}>프로젝트</Button>
+            <Button href="/" variant="link" colorScheme={oc.cyan[6]}>연결하기</Button>
+            <Button variant="solid" colorScheme={oc.cyan[6]}>다크모드 버튼</Button>
+          </BtnNavbar>
         </HeaderContents>
       </WhiteBackground>
       <GradientBorder />
