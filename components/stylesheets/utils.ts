@@ -2,21 +2,21 @@ import { css } from 'styled-components';
 
 // media query
 export const sizes = {
-  wide: '1200px',
+  wide: '1440px',
   desktop: '992px',
   tablet: '768px',
   phone: '376px',
 };
 
 export const media = {
-  wide: `(min-width: ${sizes.wide})`,
-  desktop: `(min-width: ${sizes.desktop})`,
-  tablet: `(min-width: ${sizes.tablet})`,
-  phone: `(min-width: ${sizes.phone})`,
+  wide: `(max-width: ${sizes.wide})`,
+  desktop: `(max-width: ${sizes.desktop})`,
+  tablet: `(max-width: ${sizes.tablet})`,
+  phone: `(max-width: ${sizes.phone})`,
 };
 
 // shodow
-export const shodow = (weight: number) => {
+export const shadow = (weight: number) => {
   const shadows = [
     css`box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);`,
     css`box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);`,
