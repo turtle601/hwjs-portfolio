@@ -9,6 +9,7 @@ const customJestConfig = {
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
+    '^@/public/(.*)$': '<rootDir>/public/$1',
     '^@/stylesheets/(.*)$': '<rootDir>/lib/stylesheets/$1'
   },
 
