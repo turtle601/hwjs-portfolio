@@ -1,12 +1,13 @@
 import React from 'react';
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import oc from 'open-color';
 
 import { shadow, sizes, media } from '@/stylesheets/utils';
 import { ReactProps } from '@/types/common.types';
 
 import Button from '@/components/common/Button';
+import { useSetDarkMode } from '@/hooks/useSetDarkMode';
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -18,7 +19,6 @@ const HeaderContainer = styled.div`
 `;
 
 const WhiteBackground = styled.div`
-  background-color: white;
   display: flex;
   justify-content: center;
   height: auto;
@@ -43,7 +43,7 @@ const Logo = styled.h1`
   white-space: nowrap;
   font-size: 1.4rem;
   letter-spacing: 2px;
-  color: ${oc.teal[7]};
+  color: ${({ theme }) => theme.primary};
   font-family: 'Rajdhani';
 `;
 
@@ -53,7 +53,10 @@ const Spacer = styled.div`
 
 const GradientBorder = styled.div`
   height: 3px;
-  background: linear-gradient(to right, ${oc.teal[6]}, ${oc.cyan[5]});
+
+  ${({ theme }) => css`
+    background: linear-gradient(to right, ${theme.primary}, ${theme.secondary});
+  `}
 `;
 
 const BtnNavbar = styled.nav`
@@ -67,6 +70,8 @@ const BtnNavbar = styled.nav`
 `;
 
 const Header: React.FC<ReactProps> = () => {
+  const toggleTheme = useSetDarkMode();
+
   return (
     <HeaderContainer>
       <WhiteBackground>
@@ -77,7 +82,7 @@ const Header: React.FC<ReactProps> = () => {
             <Button data-testid="homeBtn" href="/" variant="link" colorScheme={oc.cyan[6]}>홈</Button>
             <Button data-testid="projectBtn" href="/project" variant="link" colorScheme={oc.cyan[6]}>프로젝트</Button>
             <Button data-testid="connectBtn" href="/connect" variant="link" colorScheme={oc.cyan[6]}>연결하기</Button>
-            <Button variant="solid" colorScheme={oc.cyan[6]}>다크모드 버튼</Button>
+            <Button variant="solid" colorScheme={oc.cyan[6]} onClick={() => toggleTheme()}>다크모드 버튼</Button>
           </BtnNavbar>
         </HeaderContents>
       </WhiteBackground>
