@@ -61,8 +61,8 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background-color: inherit; 
-    color : inherit;
+    background-color: ${({ theme }) => theme.bgColor}; 
+    color : ${({ theme }) => theme.textColor};
   }
 
   *,
