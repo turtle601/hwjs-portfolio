@@ -2,6 +2,7 @@ import React from 'react';
 
 import styled, { css } from 'styled-components';
 
+import Link from 'next/link';
 import { shadow } from '@/stylesheets/utils';
 import { ReactProps } from '@/types/common.types';
 
@@ -49,8 +50,6 @@ const buttonStyle = css<ButtonProps>`
       ${shadow(1)};
     }
   `}
-
-  
 `;
 
 const StyledButton = styled.button`
@@ -62,11 +61,15 @@ const StyledLink = styled.a`
 `;
 
 const Button = (props: ButtonProps & ReactProps) => {
-  const { variant, children } = props;
+  const { variant, children, href } = props;
 
-  return ((variant !== 'link')
-    ? <StyledButton type="button" {...props}>{children}</StyledButton>
-    : <StyledLink {...props}>{children}</StyledLink>
+  return ((variant === 'link' && href !== undefined)
+    ? (
+      <Link href={href} passHref>
+        <StyledLink {...props}>{children}</StyledLink>
+      </Link>
+    )
+    : <StyledButton type="button" {...props}>{children}</StyledButton>
   );
 };
 
