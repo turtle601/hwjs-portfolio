@@ -7,6 +7,7 @@ import { ReactProps } from '@/types/common.types';
 import { sizes, media } from '@/stylesheets/utils';
 
 import LottieAni from '@/components/home/LottiAni';
+import Blind from '../common/Blind';
 
 const IntroduceContainer = styled.section`
   width: 100%;
@@ -72,6 +73,7 @@ const IntroduceDescription = styled.p`
 `;
 
 const InroduceImgBox = styled.div`
+  position: relative;
   width: 50%;
 
   @media ${media.tablet} {
@@ -96,6 +98,7 @@ const Introduce: React.FC<ReactProps> = () => {
             </IntroduceDescription>
           </IntroduceTextBox>
           <InroduceImgBox>
+            <Blind>코딩하는 애니메이션 이미지</Blind>
             <LottieAni />
           </InroduceImgBox>
         </IntroduceContent>
