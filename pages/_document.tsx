@@ -7,14 +7,11 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <title>준승&apos;s potofolio</title>
-          <meta charSet="utf-8" />
-          <body>
-            <Main />
-            <NextScript />
-          </body>
-        </Head>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
       </Html>
     );
   }
