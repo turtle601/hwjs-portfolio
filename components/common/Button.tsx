@@ -41,7 +41,7 @@ const buttonStyle = css<ButtonProps>`
   `}
 
   ${({ variant, colorScheme }) => (variant === 'outline' || variant === 'link') && css`
-    background-color: white;
+    background-color: inherit;
     color: ${colorScheme};
 
     &:hover {
