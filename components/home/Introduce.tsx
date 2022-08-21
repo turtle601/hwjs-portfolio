@@ -85,13 +85,13 @@ const Introduce: React.FC<ReactProps> = () => {
       <WhiteBackground>
         <IntroduceContent>
           <IntroduceTextBox>
-            <IntroduceTitle>Before they sold out
-              readymade gluten
+            <IntroduceTitle>
+              Before they sold outreadymade gluten
             </IntroduceTitle>
             <IntroduceDescription>
-              Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant
-              cold-pressed tacos poke beard tote bag.
-              Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric
+              Copper mug try-hard pitchfork pour-over freegan heirloom neutra
+              air plant cold-pressed tacos poke beard tote bag. Heirloom echo
+              park mlkshk tote bag selvage hot chicken authentic tumeric
               truffaut hexagon try-hard chambray.
             </IntroduceDescription>
           </IntroduceTextBox>
