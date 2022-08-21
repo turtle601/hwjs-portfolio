@@ -58,11 +58,11 @@ const GradientBorder = styled.div`
 
 const BtnNavbar = styled.nav`
   a + a {
-    margin-left: 1.5rem;
+    margin-left: 1.2rem;
   }
 
   a + button {
-    margin-left: 1.5rem;
+    margin-left: 1.2rem;
   }
 `;
 
