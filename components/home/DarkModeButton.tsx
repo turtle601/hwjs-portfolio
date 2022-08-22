@@ -8,7 +8,7 @@ import { themeState } from '@/atom/atom.theme';
 
 import Button from '@/components/common/Button';
 
-import { useSetDarkMode } from '@/hooks/useSetDarkMode';
+import { useDarkMode } from '@/hooks/useDarkMode';
 import Blind from '../common/Blind';
 
 const DarkModeStyledButton = styled(Button)`
@@ -17,7 +17,7 @@ const DarkModeStyledButton = styled(Button)`
 
 const DarkModeButton: React.FC<ReactProps> = () => {
   const theme = useRecoilValue(themeState);
-  const toggleTheme = useSetDarkMode();
+  const [, toggleTheme] = useDarkMode();
 
   const clikcDarkModeBtn = () => toggleTheme();
 

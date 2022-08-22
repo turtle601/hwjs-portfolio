@@ -40,6 +40,7 @@ const HeaderContents = styled.header`
 `;
 
 const Logo = styled.h1`
+  background-color: inherit;
   white-space: nowrap;
   font-size: 1.4rem;
   letter-spacing: 2px;

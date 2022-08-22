@@ -3,24 +3,24 @@
 exports[`<Home /> matches snapshop 1`] = `
 <div>
   <div
-    class="sc-2c6d4166-0 gUgQXk"
+    class="sc-2c115a48-0 dqeenT"
   >
     <div
-      class="sc-2c6d4166-1 eSxEyC"
+      class="sc-2c115a48-1 bPEchh"
     >
       <header
-        class="sc-2c6d4166-2 jtkppR"
+        class="sc-2c115a48-2 dPpuvK"
       >
         <h1
-          class="sc-2c6d4166-3 hEMzNc"
+          class="sc-2c115a48-3 fESKSr"
         >
           준승 potofolio
         </h1>
         <div
-          class="sc-2c6d4166-4 eKHOaJ"
+          class="sc-2c115a48-4 ESace"
         />
         <nav
-          class="sc-2c6d4166-6 cTLmtv"
+          class="sc-2c115a48-6 gOhNyU"
         >
           <a
             class="sc-cb1bc86c-1 hrmEYK"
@@ -44,7 +44,7 @@ exports[`<Home /> matches snapshop 1`] = `
             연결하기
           </a>
           <button
-            class="sc-cb1bc86c-0 kvWFVg sc-d27a5032-0 fSixZI"
+            class="sc-cb1bc86c-0 kvWFVg sc-d579c543-0 bWFVpi"
             type="button"
           >
             <div
@@ -72,7 +72,7 @@ exports[`<Home /> matches snapshop 1`] = `
       </header>
     </div>
     <div
-      class="sc-2c6d4166-5 ldZfPC"
+      class="sc-2c115a48-5 dgVRFZ"
     />
   </div>
   <section

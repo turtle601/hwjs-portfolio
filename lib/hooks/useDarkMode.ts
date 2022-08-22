@@ -2,7 +2,7 @@ import { useRecoilState } from 'recoil';
 
 import { themeState } from '@/atom/atom.theme';
 
-export const useSetDarkMode = () => {
+export const useDarkMode = (): [string, () => void] => {
   const [theme, setTheme] = useRecoilState(themeState);
 
   const toggleTheme = () => {
@@ -13,5 +13,5 @@ export const useSetDarkMode = () => {
     }
   };
 
-  return toggleTheme;
+  return [theme, toggleTheme];
 };
