@@ -12,7 +12,8 @@ const customJestConfig = {
     '^@/public/(.*)$': '<rootDir>/public/$1',
     '^@/stylesheets/(.*)$': '<rootDir>/lib/stylesheets/$1',
     '^@/hooks/(.*)$': '<rootDir>/lib/hooks/$1',
-    '^@/atom/(.*)$': '<rootDir>/atom/$1'
+    '^@/atom/(.*)$': '<rootDir>/atom/$1',
+    'uuid': require.resolve('uuid')
   },
 
   testEnvironment: 'jest-environment-jsdom',
