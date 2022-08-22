@@ -18,7 +18,6 @@ const IntroduceContainer = styled.section`
 `;
 
 const WhiteBackground = styled.div`
-  background-color: white;
   display: flex;
   justify-content: center;
   height: auto;

@@ -4,15 +4,17 @@ import styled, { css } from 'styled-components';
 
 import Link from 'next/link';
 import { shadow } from '@/stylesheets/utils';
-import { ReactProps } from '@/types/common.types';
+import { AnchorAttrProps, BtnAttrProps, ReactProps } from '@/types/common.types';
 
-type ButtonProps = {
+type ButtonStyleProps = {
   href ?: string;
   variant : 'solid' | 'outline' | 'link';
   colorScheme : string;
 };
 
-const buttonStyle = css<ButtonProps>`
+type ButtonProps = ButtonStyleProps & ReactProps & BtnAttrProps & AnchorAttrProps;
+
+const buttonStyle = css<ButtonStyleProps>`
   outline: none;
   border: none;
 
@@ -25,7 +27,6 @@ const buttonStyle = css<ButtonProps>`
   transition: .2s all;
 
   &:active {
-    /* 마우스 클릭 시 아래로 미세하기 움직임 */
     transform: translateY(3px);
   }
 
@@ -60,7 +61,7 @@ const StyledLink = styled.a`
   ${buttonStyle}
 `;
 
-const Button = (props: ButtonProps & ReactProps) => {
+const Button: React.FC<ButtonProps> = (props) => {
   const { variant, children, href } = props;
 
   return ((variant === 'link' && href !== undefined)

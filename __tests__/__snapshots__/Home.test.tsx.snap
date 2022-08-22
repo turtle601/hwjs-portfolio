@@ -3,84 +3,103 @@
 exports[`<Home /> matches snapshop 1`] = `
 <div>
   <div
-    class="sc-cd63fd19-0 QQnyG"
+    class="sc-2c115a48-0 dqeenT"
   >
     <div
-      class="sc-cd63fd19-1 cZmGGG"
+      class="sc-2c115a48-1 bPEchh"
     >
       <header
-        class="sc-cd63fd19-2 bMfEAb"
+        class="sc-2c115a48-2 dPpuvK"
       >
         <h1
-          class="sc-cd63fd19-3 gYTiIq"
+          class="sc-2c115a48-3 fESKSr"
         >
           준승 potofolio
         </h1>
         <div
-          class="sc-cd63fd19-4 bxcCvP"
+          class="sc-2c115a48-4 ESace"
         />
         <nav
-          class="sc-cd63fd19-6 ezOUbR"
+          class="sc-2c115a48-6 gOhNyU"
         >
           <a
-            class="sc-eb64c242-1 bmxcVW"
+            class="sc-cb1bc86c-1 hrmEYK"
             data-testid="homeBtn"
             href="/"
           >
             홈
           </a>
           <a
-            class="sc-eb64c242-1 bmxcVW"
+            class="sc-cb1bc86c-1 hrmEYK"
             data-testid="projectBtn"
             href="/project"
           >
             프로젝트
           </a>
           <a
-            class="sc-eb64c242-1 bmxcVW"
+            class="sc-cb1bc86c-1 hrmEYK"
             data-testid="connectBtn"
             href="/connect"
           >
             연결하기
           </a>
           <button
-            class="sc-eb64c242-0 drHKys"
+            class="sc-cb1bc86c-0 kvWFVg sc-d579c543-0 bWFVpi"
             type="button"
           >
-            다크모드 버튼
+            <div
+              class="sc-d0d79878-0 iLPDcB"
+            >
+              다크 모드 icon 이미지
+            </div>
+            <svg
+              height="12"
+              id="Layer_1"
+              version="1.1"
+              viewBox="0 0 512 512"
+              width="16"
+              x="0px"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+              y="0px"
+            >
+              <path
+                d="M256.349,511.15C115.434,511.536,0.886,397.613,0.501,256.698S114.037,1.235,254.953,0.85 c43.566-0.119,86.436,10.919,124.528,32.062l33.021,18.328l-32.829,18.711c-96.889,55.013-130.835,178.154-75.822,275.043 c21.18,37.301,53.697,66.881,92.832,84.444l34.467,15.543l-31.192,21.263C357.74,495.411,307.661,511.071,256.349,511.15z M256.349,43.373c-117.43,0-212.626,95.196-212.626,212.626s95.196,212.626,212.626,212.626c30.519,0.005,60.67-6.657,88.346-19.519 c-112.509-74.287-143.493-225.715-69.206-338.224c13.888-21.034,30.95-39.79,50.58-55.601 C303.681,47.355,280.099,43.327,256.349,43.373z M411.566,207.095l24.813,49.606l24.835-49.606l49.606-24.813l-49.606-24.835 l-24.813-49.606l-24.835,49.606l-49.584,24.813L411.566,207.095z M490.237,362.312c-11.743,0-21.263,9.52-21.263,21.263 s9.52,21.263,21.263,21.263s21.263-9.52,21.263-21.263S501.98,362.312,490.237,362.312z M362.662,277.262 c-11.743,0-21.263,9.52-21.263,21.263s9.52,21.263,21.263,21.263c11.743,0,21.263-9.52,21.263-21.263 S374.405,277.262,362.662,277.262z"
+              />
+            </svg>
           </button>
         </nav>
       </header>
     </div>
     <div
-      class="sc-cd63fd19-5 dpSSHx"
+      class="sc-2c115a48-5 dgVRFZ"
     />
   </div>
   <section
-    class="sc-70f78413-0 gZGCeB"
+    class="sc-dffa96e-0 ehDlTO"
   >
     <div
-      class="sc-70f78413-1 bQdXjm"
+      class="sc-dffa96e-1 kQEDkD"
     >
       <div
-        class="sc-70f78413-2 imdDVz"
+        class="sc-dffa96e-2 ftUFbE"
       >
         <div
-          class="sc-70f78413-3 jKUJPz"
+          class="sc-dffa96e-3 hYEQiQ"
         >
           <h2
-            class="sc-70f78413-4 klxsAJ"
+            class="sc-dffa96e-4 hUwyPi"
           >
             Before they sold outreadymade gluten
           </h2>
           <p
-            class="sc-70f78413-5 jZAYDD"
+            class="sc-dffa96e-5 bsBPtk"
           >
             Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.
           </p>
         </div>
         <div
-          class="sc-70f78413-6 kVyLyU"
+          class="sc-dffa96e-6 dYnfXf"
         >
           <div
             class="sc-d0d79878-0 iLPDcB"
@@ -1194,5 +1213,6 @@ exports[`<Home /> matches snapshop 1`] = `
       </div>
     </div>
   </footer>
+  ;
 </div>
 `;

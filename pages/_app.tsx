@@ -1,15 +1,17 @@
-import type { AppProps } from 'next/app';
-import { ThemeProvider } from 'styled-components';
+import React from 'react';
 
-import { theme } from '@/stylesheets/theme';
-import GlobalStyle from '@/stylesheets/global';
+import { RecoilRoot } from 'recoil';
+import type { AppProps } from 'next/app';
+
+import Provider from '@/components/common/Provider';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <RecoilRoot>
+      <Provider>
+        <Component {...pageProps} />
+      </Provider>
+    </RecoilRoot>
   );
 }
 

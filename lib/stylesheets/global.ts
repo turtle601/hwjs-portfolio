@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Rajdhani:700');
-
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -61,8 +59,8 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background-color: inherit; 
-    color : inherit;
+    background-color: ${({ theme }) => theme.bgColor}; 
+    color : ${({ theme }) => theme.textColor};
   }
 
   *,

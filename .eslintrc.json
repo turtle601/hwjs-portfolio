@@ -110,7 +110,16 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off", // props에 Spread 연산자 사용 유무
     "react/function-component-definition": "off", // 함수 정의 시 arrow or 선언
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+
+    // recoil이 제시한 eslint
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ]
   },
 
   "overrides": [
