@@ -7,8 +7,10 @@
       "@/types/*" : ["types/*"],
       "@/stylesheets/*": ["lib/stylesheets/*"],
       "@/hooks/*": ["lib/hooks/*"],
+      "@/config/*": ["lib/config/*"],
       "@/public/*": ["public/*"],
-      "@/atom/*": ["atom/*"]
+      "@/atom/*": ["atom/*"],
+      "@/axios/*": ["axios/*"]
     },
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
