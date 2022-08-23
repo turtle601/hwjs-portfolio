@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 // import { useQuery } from 'react-query';
-import { fetchNotionDB } from '@/axios/api';
+// import { fetchNotionDB } from '@/axios/api';
 import { ProjectAPI, ProjectResult } from '@/types/axios.types';
 
 import Layout from '@/components/common/Layout';
@@ -13,7 +13,7 @@ export type ProjectProps = {
   notionDB : ProjectAPI<ProjectResult>;
 };
 
-const Project: NextPage<ProjectProps> = (props) => {
+const Project: NextPage<ProjectProps> = () => {
   // const { notionDB } = props;
   // const { data } = useProjectQuery(notionDB);
 
@@ -34,12 +34,12 @@ const Project: NextPage<ProjectProps> = (props) => {
   );
 };
 
-export async function getStaticProps() {
-  const notionDB = await fetchNotionDB();
+// export async function getStaticProps() {
+//   const notionDB = await fetchNotionDB();
 
-  return {
-    props: { notionDB },
-  };
-}
+//   return {
+//     props: { notionDB },
+//   };
+// }
 
 export default Project;
