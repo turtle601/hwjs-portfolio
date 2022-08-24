@@ -1,14 +1,23 @@
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
-import { fetchNotionDB } from '@/axios/api';
 import { ProjectAPI, ProjectResult } from '@/types/axios.types';
 
-export const useProjectQuery = (initialState: ProjectAPI<ProjectResult>) => {
-  const {
-    isLoading, isError, data, error, isSuccess,
-  } = useQuery(['project'], fetchNotionDB, { initialData: initialState });
+const options = {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Notion-Version': '2022-02-22',
+    'Content-Type': 'application/json',
+    Authorization: 'Bearer secret_wQ4adc7icOZv2J1JGK5003wHlOPxWPMJyziJ2TLondc',
+  },
+  body: JSON.stringify({ page_size: 100 }),
+};
 
-  return {
-   isLoading, isError, data, error, isSuccess,
-  };
+export const fetchNotionDB = async () => {
+  const res = await fetch('https://api.notion.com/v1/databases/28335213edef4013aa4f14481ac0992b/query', options);
+  return res.json();
+};
+
+export const useProjectQuery = () => {
+  return useQuery<ProjectAPI<ProjectResult>>(['project'], async () => fetchNotionDB());
 };

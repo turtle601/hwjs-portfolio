@@ -1,22 +1,20 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-// import { useQuery } from 'react-query';
-// import { fetchNotionDB } from '@/axios/api';
+import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { ProjectAPI, ProjectResult } from '@/types/axios.types';
 
 import Layout from '@/components/common/Layout';
-// import { useProjectQuery } from '@/hooks/useProjectQuery';
+import { fetchNotionDB } from '@/hooks/useProjectQuery';
+
+import ProjectList from '@/components/project/ProjectList';
 
 export type ProjectProps = {
   notionDB : ProjectAPI<ProjectResult>;
 };
 
 const Project: NextPage<ProjectProps> = () => {
-  // const { notionDB } = props;
-  // const { data } = useProjectQuery(notionDB);
-
   return (
     <>
       <HelmetProvider>
@@ -29,17 +27,23 @@ const Project: NextPage<ProjectProps> = () => {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700" />
         </Helmet>
       </HelmetProvider>
-      <Layout>hi</Layout>;
+      <Layout>
+        <ProjectList />
+      </Layout>;
     </>
   );
 };
 
-// export async function getStaticProps() {
-//   const notionDB = await fetchNotionDB();
-
-//   return {
-//     props: { notionDB },
-//   };
-// }
-
 export default Project;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery<ProjectAPI<ProjectResult>>(['project'], async () => fetchNotionDB());
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};
