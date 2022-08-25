@@ -1,7 +1,3 @@
-import { useQuery } from '@tanstack/react-query';
-
-import { ProjectAPI, ProjectResult } from '@/types/axios.types';
-
 const options = {
   method: 'POST',
   headers: {
@@ -16,8 +12,4 @@ const options = {
 export const fetchNotionDB = async () => {
   const res = await fetch('https://api.notion.com/v1/databases/28335213edef4013aa4f14481ac0992b/query', options);
   return res.json();
-};
-
-export const useProjectQuery = () => {
-  return useQuery<ProjectAPI<ProjectResult>>(['project'], async () => fetchNotionDB());
 };

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useProjectQuery } from '@/hooks/useProjectQuery';
+import { useQuery } from '@tanstack/react-query';
 import ProjectItem from './ProjectItem';
+import { ProjectAPI, ProjectResult } from '@/types/project.types';
+import { fetchNotionDB } from '@/hooks/useProjectQuery';
 
 import { media, sizes } from '@/stylesheets/utils';
 
@@ -38,7 +40,19 @@ const ProjectGrid = styled.div`
 `;
 
 const ProjectList: React.FC = () => {
-  const { data } = useProjectQuery();
+  const [state, setState]
+    = useState<ReturnType<typeof useQuery<ProjectAPI<ProjectResult>>> | null>(null);
+  const fetchData = useQuery<ProjectAPI<ProjectResult>>(['project'], async () => fetchNotionDB());
+
+  useEffect(() => {
+    setState(fetchData);
+  }, [fetchData]);
+
+  if (state === null) {
+    return <div>서버가 이상해요...</div>;
+  }
+
+  const { data } = state;
 
   return (
     <ProjectListContainer>

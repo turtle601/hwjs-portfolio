@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import oc from 'open-color';
 import Link from 'next/link';
-import { ProjectResult } from '@/types/axios.types';
+import { ProjectResult } from '@/types/project.types';
 import { shadow } from '@/stylesheets/utils';
 import Blind from '../common/Blind';
 import Button from '../common/Button';
@@ -62,7 +62,7 @@ const ProjectTitle = styled.h2`
   font-weight: bold;
 `;
 
-const ProjectDescription = styled.p`
+const ProjectDescription = styled.div`
   margin-top: 10px;
   font-weight: 300;
   text-overflow: ellipsis;

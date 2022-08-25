@@ -3,7 +3,7 @@ import type { NextPage, GetStaticProps } from 'next';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import { dehydrate, QueryClient } from '@tanstack/react-query';
-import { ProjectAPI, ProjectResult } from '@/types/axios.types';
+import { ProjectAPI, ProjectResult } from '@/types/project.types';
 
 import Layout from '@/components/common/Layout';
 import { fetchNotionDB } from '@/hooks/useProjectQuery';
