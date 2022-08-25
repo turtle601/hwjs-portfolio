@@ -7,7 +7,7 @@ export type ProjectAPI<T> = {
 };
 
 type IdAndType = {
-  [key in ('id' | 'type')] : 'string'
+  [k in ('id' | 'type')] : string;
 };
 
 type ProjectNameTitle = {
@@ -18,10 +18,23 @@ type ProjectNameTitle = {
   href: object;
 };
 
+type ProjectDescriptionRichtext = ProjectNameTitle;
+
+type ProjectCover = {
+  type: string;
+  external: {
+    url: string;
+  }
+};
+
+type ProjectTag = {
+  [k in ('id' | 'name' | 'color')] : string;
+};
+
 type ProjectProperty = {
-  '태그': IdAndType & { multi_select : object };
+  '태그': IdAndType & { multi_select : ProjectTag[] };
   WorkPeriod: IdAndType & { data : object };
-  Description: IdAndType & { rich_text: object };
+  Description: IdAndType & { rich_text: ProjectDescriptionRichtext[] };
   '이름': IdAndType & { title : ProjectNameTitle[] }
 };
 
@@ -32,7 +45,7 @@ export type ProjectResult = {
   last_edited_time: string;
   created_by: object,
   last_edited_by: object,
-  cover: object,
+  cover: ProjectCover,
   icon: object,
   parent: object,
   archived: boolean,
