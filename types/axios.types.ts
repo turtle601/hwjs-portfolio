@@ -31,11 +31,16 @@ type ProjectTag = {
   [k in ('id' | 'name' | 'color')] : string;
 };
 
+type ProjectURL = { [k in ('id' | 'url')] : string; } & { type: 'url' };
+
 type ProjectProperty = {
   '태그': IdAndType & { multi_select : ProjectTag[] };
+  '이름': IdAndType & { title : ProjectNameTitle[] }
+  '배포': ProjectURL;
   WorkPeriod: IdAndType & { data : object };
   Description: IdAndType & { rich_text: ProjectDescriptionRichtext[] };
-  '이름': IdAndType & { title : ProjectNameTitle[] }
+  Github: ProjectURL;
+  blog: ProjectURL;
 };
 
 export type ProjectResult = {
