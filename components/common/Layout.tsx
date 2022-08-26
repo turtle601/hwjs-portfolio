@@ -12,11 +12,10 @@ const StyledLayout = styled.div`
   flex-direction: column;
 `;
 
-const Layout: React.FC<ReactProps> = ({ children }) => {
+const Layout: React.FC<ReactProps> = () => {
   return (
     <StyledLayout>
       <Header />
-      {children}
       <Footer />
     </StyledLayout>
   );

@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import Layout from '@/components/common/Layout';
 import Introduce from '@/components/home/Introduce';
 
 const Home: NextPage = () => {
@@ -17,7 +16,7 @@ const Home: NextPage = () => {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700" />
         </Helmet>
       </HelmetProvider>
-      <Layout><Introduce /></Layout>;
+      <Introduce />
     </>
   );
 };

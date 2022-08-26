@@ -12,15 +12,23 @@ import {
 } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Provider from '@/components/common/Provider';
+import Layout from '@/components/common/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [queryClient] = React.useState(() => new QueryClient());
+  const [queryClient] = React.useState(() => new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: 0,
+      },
+    },
+  }));
 
   return (
     <RecoilRoot>
       <Provider>
         <QueryClientProvider client={queryClient}>
           <Hydrate state={pageProps.dehydratedState}>
+            <Layout />
             <Component {...pageProps} />
             <ReactQueryDevtools initialIsOpen />
           </Hydrate>
