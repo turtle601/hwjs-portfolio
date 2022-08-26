@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 import ProjectItem from './ProjectItem';
 import { ProjectAPI, ProjectResult } from '@/types/project.types';
-import { fetchNotionDB } from '@/hooks/useProjectQuery';
+import { getNotionApi } from '@/api/getNotionApi';
 
 import { media, sizes } from '@/stylesheets/utils';
 
@@ -42,7 +42,7 @@ const ProjectGrid = styled.div`
 const ProjectList: React.FC = () => {
   const [state, setState]
     = useState<ReturnType<typeof useQuery<ProjectAPI<ProjectResult>>> | null>(null);
-  const fetchData = useQuery<ProjectAPI<ProjectResult>>(['project'], async () => fetchNotionDB());
+  const fetchData = useQuery<ProjectAPI<ProjectResult>>(['project'], async () => getNotionApi());
 
   useEffect(() => {
     setState(fetchData);

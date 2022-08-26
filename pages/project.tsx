@@ -6,7 +6,7 @@ import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { ProjectAPI, ProjectResult } from '@/types/project.types';
 
 import Layout from '@/components/common/Layout';
-import { fetchNotionDB } from '@/hooks/useProjectQuery';
+import { getNotionApi } from '@/api/getNotionApi';
 
 import ProjectList from '@/components/project/ProjectList';
 
@@ -39,7 +39,7 @@ export default Project;
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery<ProjectAPI<ProjectResult>>(['project'], async () => fetchNotionDB());
+  await queryClient.prefetchQuery<ProjectAPI<ProjectResult>>(['project'], async () => getNotionApi());
 
   return {
     props: {
