@@ -5,6 +5,7 @@ export type ReactProps = {
   children ?: React.ReactNode;
 };
 
-// Button Attr Props
-export type BtnAttrProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
-export type AnchorAttrProps = React.ButtonHTMLAttributes<HTMLAnchorElement>;
+export type ButtonStyleProps = {
+  variant?: 'solid' | 'outline' | 'link';
+  colorScheme?: string;
+};

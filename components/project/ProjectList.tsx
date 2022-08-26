@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useQuery } from '@tanstack/react-query';
 import ProjectItem from './ProjectItem';
 import { ProjectAPI, ProjectResult } from '@/types/project.types';
-import { getNotionApi } from '@/api/getNotionApi';
 
 import { media, sizes } from '@/stylesheets/utils';
 
@@ -39,20 +38,12 @@ const ProjectGrid = styled.div`
   }
 `;
 
-const ProjectList: React.FC = () => {
-  const [state, setState]
-    = useState<ReturnType<typeof useQuery<ProjectAPI<ProjectResult>>> | null>(null);
-  const fetchData = useQuery<ProjectAPI<ProjectResult>>(['project'], async () => getNotionApi());
+type ProjectListProps = {
+  pj : ReturnType<typeof useQuery<ProjectAPI<ProjectResult>>>
+};
 
-  useEffect(() => {
-    setState(fetchData);
-  }, [fetchData]);
-
-  if (state === null) {
-    return <div>서버가 이상해요...</div>;
-  }
-
-  const { data } = state;
+const ProjectList: React.FC<ProjectListProps> = ({ pj }) => {
+  const { data } = pj;
 
   return (
     <ProjectListContainer>

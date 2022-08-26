@@ -46,6 +46,7 @@
     "operator-linebreak": "off",
 
     // TypeScript
+    "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/no-inferrable-types": "error",   // 타입 추론이 가능하다면 명시적 타입 추론 X
     "@typescript-eslint/consistent-type-imports": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
