@@ -14,7 +14,7 @@ const customJestConfig = {
     '^@/hooks/(.*)$': '<rootDir>/lib/hooks/$1',
     '^@/config/(.*)$': '<rootDir>/lib/config/$1',
     '^@/atom/(.*)$': '<rootDir>/atom/$1',
-    '^@/axios/(.*)$': '<rootDir>/axios/$1',
+    '^@/api/(.*)$': '<rootDir>/api/$1',
     'uuid': require.resolve('uuid')
   },
 

@@ -10,7 +10,7 @@
       "@/config/*": ["lib/config/*"],
       "@/public/*": ["public/*"],
       "@/atom/*": ["atom/*"],
-      "@/axios/*": ["axios/*"]
+      "@/api/*": ["api/*"]
     },
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
