@@ -1,24 +1,39 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 
 import { RecoilRoot } from 'recoil';
 import type { AppProps } from 'next/app';
 
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
-
+import {
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Provider from '@/components/common/Provider';
+import Layout from '@/components/common/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient();
+  const [queryClient] = React.useState(() => new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: 0,
+      },
+    },
+  }));
 
   return (
     <RecoilRoot>
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen />
-        <Provider>
-          <Component {...pageProps} />
-        </Provider>
-      </QueryClientProvider>
+      <Provider>
+        <QueryClientProvider client={queryClient}>
+          <Hydrate state={pageProps.dehydratedState}>
+            <Layout />
+            <Component {...pageProps} />
+            <ReactQueryDevtools initialIsOpen />
+          </Hydrate>
+        </QueryClientProvider>
+      </Provider>
     </RecoilRoot>
   );
 }

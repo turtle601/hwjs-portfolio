@@ -1,21 +1,27 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-// import { useQuery } from 'react-query';
-// import { fetchNotionDB } from '@/axios/api';
-import { ProjectAPI, ProjectResult } from '@/types/axios.types';
+import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query';
+import { useEffect, useState } from 'react';
+import { ProjectAPI, ProjectResult } from '@/types/project.types';
+import { getNotionApi } from '@/api/getNotionApi';
 
-import Layout from '@/components/common/Layout';
-// import { useProjectQuery } from '@/hooks/useProjectQuery';
+import ProjectList from '@/components/project/ProjectList';
 
-export type ProjectProps = {
-  notionDB : ProjectAPI<ProjectResult>;
-};
+const Project: NextPage = () => {
+  const [showChild, setShowChild] = useState(false);
+  const project = useQuery<ProjectAPI<ProjectResult>>(['project'], async () => getNotionApi());
 
-const Project: NextPage<ProjectProps> = () => {
-  // const { notionDB } = props;
-  // const { data } = useProjectQuery(notionDB);
+  // 클라이언트 측 하이드레이션이 표시될 때까지 대기
+  useEffect(() => {
+    setShowChild(true);
+  }, []);
+
+  if (!showChild) {
+    // 처음 자리표시자 UI를 표시할 수 있다.
+    return null;
+  }
 
   return (
     <>
@@ -29,17 +35,21 @@ const Project: NextPage<ProjectProps> = () => {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700" />
         </Helmet>
       </HelmetProvider>
-      <Layout>hi</Layout>;
+      <ProjectList pj={project} />
     </>
   );
 };
 
-// export async function getStaticProps() {
-//   const notionDB = await fetchNotionDB();
-
-//   return {
-//     props: { notionDB },
-//   };
-// }
-
 export default Project;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery<ProjectAPI<ProjectResult>>(['project'], async () => getNotionApi());
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+};

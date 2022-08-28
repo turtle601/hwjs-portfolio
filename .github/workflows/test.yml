@@ -22,7 +22,3 @@ jobs:
     # eslint 테스트
     - name : eslint --check
       run : yarn lint
-
-    # test code 테스트
-    - name : jest test
-      run : yarn test:ci

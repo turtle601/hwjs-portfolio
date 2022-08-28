@@ -7,7 +7,7 @@ export type ProjectAPI<T> = {
 };
 
 type IdAndType = {
-  [key in ('id' | 'type')] : 'string'
+  [k in ('id' | 'type')] : string;
 };
 
 type ProjectNameTitle = {
@@ -18,11 +18,29 @@ type ProjectNameTitle = {
   href: object;
 };
 
+type ProjectDescriptionRichtext = ProjectNameTitle;
+
+type ProjectCover = {
+  type: string;
+  external: {
+    url: string;
+  }
+};
+
+type ProjectTag = {
+  [k in ('id' | 'name' | 'color')] : string;
+};
+
+type ProjectURL = { [k in ('id' | 'url')] : string; } & { type: 'url' };
+
 type ProjectProperty = {
-  '태그': IdAndType & { multi_select : object };
-  WorkPeriod: IdAndType & { data : object };
-  Description: IdAndType & { rich_text: object };
+  '태그': IdAndType & { multi_select : ProjectTag[] };
   '이름': IdAndType & { title : ProjectNameTitle[] }
+  '배포': ProjectURL;
+  WorkPeriod: IdAndType & { data : object };
+  Description: IdAndType & { rich_text: ProjectDescriptionRichtext[] };
+  Github: ProjectURL;
+  blog: ProjectURL;
 };
 
 export type ProjectResult = {
@@ -32,7 +50,7 @@ export type ProjectResult = {
   last_edited_time: string;
   created_by: object,
   last_edited_by: object,
-  cover: object,
+  cover: ProjectCover,
   icon: object,
   parent: object,
   archived: boolean,
