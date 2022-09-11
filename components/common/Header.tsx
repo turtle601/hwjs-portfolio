@@ -12,6 +12,7 @@ import DarkModeButton from '@/components/home/DarkModeButton';
 
 const HeaderContainer = styled.div`
   position: sticky;
+  backdrop-filter: blur(10px);
   top: 0px;
   
   width: 100%;
@@ -19,6 +20,7 @@ const HeaderContainer = styled.div`
   
   display: flex;
   justify-content: center;
+  z-index: 10;
   
   ${shadow(1)}
 `;
