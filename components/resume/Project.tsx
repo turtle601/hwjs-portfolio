@@ -1,50 +1,80 @@
 import React from 'react';
 import styled from 'styled-components';
-import oc from 'open-color';
 
-import { media, sizes } from '@/stylesheets/utils';
-import { ReactProps } from '@/types/common.types';
+import { useRecoilValue } from 'recoil';
+import { pjState } from '@/atom/atom.resume';
+import { PjType } from '@/types/atom.types';
+
+import * as ResumeStyle from '@/stylesheets/resume';
+
+import ResumeHeader from '@/components/resume/ResumeHeader';
 
 const ProjectContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  padding-left: 2rem;
-  padding-right: 2rem;
-
-  width: ${sizes.wide};
-
-  @media ${media.wide} {
-    width: 100%;
-  }
-
+  ${ResumeStyle.Container}
   margin-top: 5rem;
-
 `;
 
-const ProjectTitle = styled.h2`
-  font-size: 5rem;
+const ProjectTitle = styled.h3`
+  ${ResumeStyle.Title}
+`;
 
-  &::after {
-    content: '.';
-    color: ${oc.teal[6]}
+const ProjectType = styled.div`
+  ${ResumeStyle.Type}
+`;
+
+const ProjectExplain = styled.div`
+  ${ResumeStyle.Explain}
+`;
+
+const ProjectContent = styled.ul`
+  li + li {
+    margin-top: 4rem;
+  }
+
+  h4 + div {
+    margin-top: 1.2rem;
   }
 `;
 
-const ProjectLine = styled.div`
-  width: 100%;
-  height: 0.5rem;
-
-  margin-top: 2rem;
-  background-image: linear-gradient(90deg, ${oc.teal[6]} 20%, ${oc.cyan[6]} 80%);
+const ProjectWorryTitle = styled.h4`
+  ${ResumeStyle.WorryTitle}
 `;
 
-const Project: React.FC<ReactProps> = ({ children }) => {
+const ProjectReadmeTitle = styled.h4`
+  ${ResumeStyle.ReadmeTitle}
+`;
+
+const Project: React.FC = () => {
+  const projects = useRecoilValue<PjType []>(pjState);
+
   return (
     <ProjectContainer>
-      <ProjectTitle>Project</ProjectTitle>
-      <ProjectLine />
-      {children}
+      <ResumeHeader name="Project" />
+      <ProjectContent>
+        {
+        projects.map((project) => {
+          return (
+            <li key={project.id}>
+              <ProjectType>{project.type}</ProjectType>
+              <ProjectTitle>{project.title}</ProjectTitle>
+              {
+                project.explains.map((explain) => {
+                  return <ProjectExplain key={explain}>{explain}</ProjectExplain>;
+                })
+              }
+              <ProjectWorryTitle>프로젝트 구현 시 했던 고민들</ProjectWorryTitle>
+              {
+                project.worries.map((worry) => {
+                  return <ProjectExplain key={worry}>{worry}</ProjectExplain>;
+                })
+              }
+              <ProjectReadmeTitle>리드미</ProjectReadmeTitle>
+              <ProjectExplain>{project.readme}</ProjectExplain>
+            </li>
+          );
+        })
+      }
+      </ProjectContent>
     </ProjectContainer>
   );
 };
