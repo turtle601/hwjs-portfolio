@@ -30,6 +30,8 @@ const ProjectPeriod = styled.div`
 `;
 
 const ProjectExplain = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   font-size: 1.5rem;
 
   &::before {
@@ -38,7 +40,7 @@ const ProjectExplain = styled.div`
     
   }
 
-  line-height: 1rem;
+  line-height: 1.5rem;
 `;
 
 const ProjectWorry = styled.h4`
@@ -69,7 +71,11 @@ const ProjectPortfolio: React.FC = () => {
       <Title>준승 포트폴리오</Title>
       <ProjectPeriod>2022년 8월 22일 ~ 계속 개발 중</ProjectPeriod>
       <ProjectExplain>hi</ProjectExplain>
-      <ProjectExplain>hi</ProjectExplain>
+      <ProjectExplain>
+        haslkdjflkasjdfljasldjflksajdfljasldjflasj
+        dfljasldfjlaskjdfasdfasdjkhfkjashdkfhaskjd
+        hfkjashkdjfhaskhfkjashkjl
+      </ProjectExplain>
       <ProjectExplain>hi</ProjectExplain>
       <ProjectExplain>hi</ProjectExplain>
       <ProjectExplain>hi</ProjectExplain>

@@ -4,6 +4,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import ResumeTemplate from '@/components/resume/ResumeTemplate';
 import Project from '@/components/resume/Project';
 import ProjectPortfolio from '@/components/resume/ProjectPortfolio';
+import Education from '@/components/resume/Eduction';
 
 const Resume: NextPage = () => {
   return (
@@ -19,6 +20,7 @@ const Resume: NextPage = () => {
         </Helmet>
       </HelmetProvider>
       <ResumeTemplate>
+        <Education />
         <Project>
           <ProjectPortfolio />
         </Project>

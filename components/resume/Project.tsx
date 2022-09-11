@@ -14,9 +14,11 @@ const ProjectContainer = styled.div`
 
   width: ${sizes.wide};
 
-  @media ${media.tablet} {
+  @media ${media.wide} {
     width: 100%;
   }
+
+  margin-top: 5rem;
 
 `;
 

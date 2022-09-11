@@ -8,22 +8,15 @@ const ResumeTemplateContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   margin-top: 5rem;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  height: auto;
 `;
 
 const ResumeTemplate: React.FC<ReactProps> = ({ children }) => {
   return (
     <ResumeTemplateContainer>
-      <Wrapper>
-        {children}
-      </Wrapper>
+      {children}
     </ResumeTemplateContainer>
   );
 };
