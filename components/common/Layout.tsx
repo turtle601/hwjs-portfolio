@@ -7,15 +7,21 @@ import Footer from '@/components/common/Footer';
 import { ReactProps } from '@/types/common.types';
 
 const StyledLayout = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
 `;
 
-const Layout: React.FC<ReactProps> = () => {
+const ContentWrapper = styled.div`
+  padding-bottom: 2.5rem;
+`;
+
+const Layout: React.FC<ReactProps> = ({ children }) => {
   return (
     <StyledLayout>
-      <Header />
+      <ContentWrapper>
+        <Header />
+        {children}
+      </ContentWrapper>
       <Footer />
     </StyledLayout>
   );
