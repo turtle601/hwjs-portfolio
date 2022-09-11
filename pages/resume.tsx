@@ -5,6 +5,7 @@ import ResumeTemplate from '@/components/resume/ResumeTemplate';
 import Project from '@/components/resume/Project';
 import ProjectPortfolio from '@/components/resume/ProjectPortfolio';
 import Education from '@/components/resume/Eduction';
+import Share from '@/components/resume/Share';
 
 const Resume: NextPage = () => {
   return (
@@ -24,6 +25,7 @@ const Resume: NextPage = () => {
         <Project>
           <ProjectPortfolio />
         </Project>
+        <Share />
       </ResumeTemplate>
     </>
   );
