@@ -5,6 +5,7 @@ import ResumeTemplate from '@/components/resume/ResumeTemplate';
 import Project from '@/components/resume/Project';
 import Education from '@/components/resume/Eduction';
 import Share from '@/components/resume/Share';
+import Layout from '@/components/common/Layout';
 
 const Resume: NextPage = () => {
   return (
@@ -19,11 +20,13 @@ const Resume: NextPage = () => {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700" />
         </Helmet>
       </HelmetProvider>
-      <ResumeTemplate>
-        <Education />
-        <Project />
-        <Share />
-      </ResumeTemplate>
+      <Layout>
+        <ResumeTemplate>
+          <Education />
+          <Project />
+          <Share />
+        </ResumeTemplate>
+      </Layout>
     </>
   );
 };

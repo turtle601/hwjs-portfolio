@@ -12,7 +12,7 @@ import {
 } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Provider from '@/components/common/Provider';
-import Layout from '@/components/common/Layout';
+// import Layout from '@/components/common/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient({
@@ -28,7 +28,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Provider>
         <QueryClientProvider client={queryClient}>
           <Hydrate state={pageProps.dehydratedState}>
-            <Layout />
             <Component {...pageProps} />
             <ReactQueryDevtools initialIsOpen />
           </Hydrate>

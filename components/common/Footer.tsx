@@ -11,18 +11,18 @@ import LinkButton from './Link';
 
 const FooterContainer = styled.footer`
   width: 100%;
-  position: fixed;
-  bottom: 0px;
+  position: absolute;
+  bottom: 0;
 
   background-color: ${oc.gray[4]};
   display: flex;
   justify-content: center;
-  height: auto;
+  height: 2.5rem;
 `;
 
 const FooterContents = styled.div`
   width: ${sizes.wide};
-  height: 55px;
+
   display: flex;
   flex-direction: row;
   align-items: center;
