@@ -75,12 +75,12 @@ const Header: React.FC<ReactProps> = () => {
   return (
     <HeaderContainer>
       <HeaderContents>
-        <Logo>준승 potofolio</Logo>
+        <Logo>준승 portfolio</Logo>
         <Spacer />
         <BtnNavbar>
-          <LinkButton data-testid="homeBtn" href="/" variant="link" colorScheme={oc.cyan[6]} target={false}>홈</LinkButton>
-          <LinkButton data-testid="projectBtn" href="/project" variant="link" colorScheme={oc.cyan[6]} target={false}>프로젝트</LinkButton>
-          <LinkButton data-testid="connectBtn" href="/connect" variant="link" colorScheme={oc.cyan[6]} target={false}>연결하기</LinkButton>
+          <LinkButton href="/" variant="link" colorScheme={oc.cyan[6]} target={false}>홈</LinkButton>
+          <LinkButton href="/project" variant="link" colorScheme={oc.cyan[6]} target={false}>프로젝트</LinkButton>
+          <LinkButton href="/resume" variant="link" colorScheme={oc.cyan[6]} target={false}>내 소개</LinkButton>
           <DarkModeButton />
         </BtnNavbar>
       </HeaderContents>

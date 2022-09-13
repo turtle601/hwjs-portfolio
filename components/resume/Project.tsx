@@ -7,6 +7,7 @@ import { PjType } from '@/types/atom.types';
 
 import * as ResumeStyle from '@/stylesheets/resume';
 
+import LinkButton from '../common/Link';
 import ResumeHeader from '@/components/resume/ResumeHeader';
 
 const ProjectContainer = styled.div`
@@ -30,10 +31,6 @@ const ProjectContent = styled.ul`
   li + li {
     margin-top: 4rem;
   }
-
-  h4 + div {
-    margin-top: 1.2rem;
-  }
 `;
 
 const ProjectWorryTitle = styled.h4`
@@ -42,6 +39,14 @@ const ProjectWorryTitle = styled.h4`
 
 const ProjectReadmeTitle = styled.h4`
   ${ResumeStyle.ReadmeTitle}
+`;
+
+const ProjectLinkStyleTag = styled.div`
+  margin-top: 1.2rem;
+
+  & + & {
+    margin-top: 1.2rem;
+  }
 `;
 
 const Project: React.FC = () => {
@@ -65,11 +70,25 @@ const Project: React.FC = () => {
               <ProjectWorryTitle>프로젝트 구현 시 했던 고민들</ProjectWorryTitle>
               {
                 project.worries.map((worry) => {
-                  return <ProjectExplain key={worry}>{worry}</ProjectExplain>;
+                  return ((worry.link === null)
+                    ? <ProjectExplain key={worry.text}>{worry.text}</ProjectExplain>
+                    : (
+                      <ProjectLinkStyleTag>
+                        <LinkButton key={worry.text} variant="underline" href={worry.link} target>
+                          <ProjectExplain>
+                            {worry.text}
+                          </ProjectExplain>
+                        </LinkButton>
+                      </ProjectLinkStyleTag>
+                    ));
                 })
               }
               <ProjectReadmeTitle>리드미</ProjectReadmeTitle>
-              <ProjectExplain>{project.readme}</ProjectExplain>
+              <ProjectLinkStyleTag>
+                <LinkButton variant="underline" href={project.readme} target>
+                  <ProjectExplain>{project.readme}</ProjectExplain>
+                </LinkButton>
+              </ProjectLinkStyleTag>
             </li>
           );
         })

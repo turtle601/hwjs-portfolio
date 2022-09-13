@@ -12,12 +12,17 @@ export type SharedType = {
   explains: string[];
 };
 
+export type WorryType = {
+  link: string | null;
+  text: string;
+};
+
 export type PjType = {
   id: string;
   type: '개인 프로젝트' | '팀 프로젝트';
   title: string;
   period: string;
   explains: string[];
-  worries: string[];
+  worries: WorryType[];
   readme: string;
 };

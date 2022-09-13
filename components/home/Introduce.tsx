@@ -11,7 +11,7 @@ import Blind from '../common/Blind';
 
 const IntroduceContainer = styled.section`
   width: 100%;
-  margin-top: 10rem;
+  margin-top: 5rem;
 
   display: flex;
   flex-direction: column;
@@ -31,11 +31,12 @@ const IntroduceContent = styled.div`
   align-items: center;
 
   padding-left: 3rem;
-  padding-right: 3rem;
+
 
   @media ${media.tablet} {
     width: 100%;
     flex-direction: column;
+    padding-right: 3rem;
   }
 `;
 
@@ -55,16 +56,30 @@ const IntroduceTextBox = styled.div`
 `;
 
 const IntroduceTitle = styled.h2`
-  font-size: 2rem;
+  font-size: 3rem;
 
   @media ${media.tablet} {
     text-align: center;
+    font-size: 2rem;
+  }
+  
+  line-height: 5rem;
+`;
+
+const IntroduceName = styled.strong`
+  font-size: 5rem;
+  text-decoration: underline;
+  text-decoration-color: ${oc.teal[6]};
+
+  @media ${media.tablet} {
+    font-size: 4rem;
   }
 `;
 
 const IntroduceDescription = styled.p`
-  color: ${oc.gray[6]};
-  line-height: 1.5;
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.textColor};
+  line-height: 2rem;
 
   @media ${media.tablet} {
     text-align: center;
@@ -87,14 +102,14 @@ const Introduce: React.FC<ReactProps> = () => {
         <IntroduceContent>
           <IntroduceTextBox>
             <IntroduceTitle>
-              Before they sold outreadymade gluten
+              기록과 공유를 좋아하는
             </IntroduceTitle>
-            <IntroduceDescription>
-              Copper mug try-hard pitchfork pour-over freegan heirloom neutra
-              air plant cold-pressed tacos poke beard tote bag. Heirloom echo
-              park mlkshk tote bag selvage hot chicken authentic tumeric
-              truffaut hexagon try-hard chambray.
-            </IntroduceDescription>
+            <IntroduceTitle>
+              <IntroduceName>황준승</IntroduceName> 입니다.
+            </IntroduceTitle>
+            <IntroduceDescription>프론트엔드 개발자를 꿈꾸고 있습니다.</IntroduceDescription>
+            <IntroduceDescription>배운 것을 기록하고 공유하는 것을 좋아합니다.</IntroduceDescription>
+            <IntroduceDescription>다른 사람들이 이해하기 쉽게 기록하고 공유하려고 노력합니다.</IntroduceDescription>
           </IntroduceTextBox>
           <InroduceImgBox>
             <Blind>코딩하는 애니메이션 이미지</Blind>

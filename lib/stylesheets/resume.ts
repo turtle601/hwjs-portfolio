@@ -34,11 +34,11 @@ export const Type = css`
 `;
 
 export const Explain = css`
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   font-size: 1.5rem;
 
   &::before {
+    display: inline;
     content: url("data:image/svg+xml,%3Csvg width='18px' height='18px' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='48' height='48' fill='white' fill-opacity='0.01'/%3E%3Cpath d='M43 11L16.875 37L5 25.1818' stroke='teal' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");    
     margin-right: 0.5rem;
     
