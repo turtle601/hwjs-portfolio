@@ -62,7 +62,6 @@ export const pjState = atom<PjType []>({
       explains: [
         '나만의 포트폴리오를 만들기 위해 제작',
         '다크모드 구현',
-        '태블릿, 모바일 환경에서의 반응형 구현',
         'notion api 를 사용하여 프로젝트 정보 렌더링하기',
       ],
       worries: [

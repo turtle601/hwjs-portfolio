@@ -75,7 +75,7 @@ const Header: React.FC<ReactProps> = () => {
   return (
     <HeaderContainer>
       <HeaderContents>
-        <Logo>준승 potofolio</Logo>
+        <Logo>준승 portfolio</Logo>
         <Spacer />
         <BtnNavbar>
           <LinkButton href="/" variant="link" colorScheme={oc.cyan[6]} target={false}>홈</LinkButton>
