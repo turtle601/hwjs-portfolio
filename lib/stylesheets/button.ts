@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import oc from 'open-color';
 import { shadow } from '@/stylesheets/utils';
 
 import { ButtonStyleProps } from '@/types/common.types';
@@ -39,6 +40,17 @@ export const ButtonStyle = css<ButtonStyleProps>`
     &:hover {
       background: ${colorScheme};
       color: white;
+      ${shadow(1)};
+    }
+  `}
+
+  ${({ variant }) => (variant === 'underline') && css`
+    text-decoration: underline;
+    padding: 0px;
+    padding-bottom: 0px;
+
+    &:hover {
+      color: ${oc.teal[6]};
       ${shadow(1)};
     }
   `}

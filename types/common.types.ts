@@ -6,6 +6,6 @@ export type ReactProps = {
 };
 
 export type ButtonStyleProps = {
-  variant?: 'solid' | 'outline' | 'link';
+  variant?: 'solid' | 'outline' | 'link' | 'underline';
   colorScheme?: string;
 };

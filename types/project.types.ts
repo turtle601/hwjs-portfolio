@@ -22,9 +22,12 @@ type ProjectDescriptionRichtext = ProjectNameTitle;
 
 type ProjectCover = {
   type: string;
-  external: {
-    url: string;
-  }
+  external : {
+    url : string;
+  };
+  file : {
+    url : string | undefined
+  };
 };
 
 type ProjectTag = {
