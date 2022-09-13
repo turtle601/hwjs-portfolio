@@ -81,7 +81,8 @@ const IconBox = styled.div`
 const ProjectItem: React.FC<{ project: ProjectResult }> = ({ project }) => {
   const title = project.properties['이름'].title[0].plain_text;
   const description = project.properties.Description.rich_text[0].plain_text;
-  const ImgSrc = project.cover.external.url;
+  const ImgSrc = (project.cover.file.url === undefined)
+    ? project.cover.external.url : project.cover.file.url;
   const tags = project.properties['태그'].multi_select;
   const gitrepo = project.properties.Github.url;
   const blogUrl = project.properties.blog.url;
