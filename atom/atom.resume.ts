@@ -56,16 +56,27 @@ export const pjState = atom<PjType []>({
   default: [
     {
       id: `준승 포트폴리오${v1()}`,
-      title: '준승 포트폴리오',
+      title: '준승 포트폴리오(현재 페이지)',
       type: '개인 프로젝트',
       period: '2022년 8월 22일 ~ 계속 개발 중',
       explains: [
-        'hi', 'hi', 'hi',
+        '나만의 포트폴리오를 만들기 위해 제작',
+        '다크모드 구현',
+        '태블릿, 모바일 환경에서의 반응형 구현',
+        'notion api 를 사용하여 프로젝트 정보 렌더링하기',
       ],
       worries: [
-        'hi', 'hi',
+        {
+          link: 'https://velog.io/@turtle601/%EC%A4%80%EC%8A%B9s-portfolio-1%EC%B0%A8-%EB%B0%B0%ED%8F%AC-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8',
+          text: "[준승's 포트폴리오] 1차 배포 스프린트 회고",
+        },
+        {
+          link: 'https://velog.io/@turtle601/%EC%A4%80%EC%8A%B9-portfolio-2%EC%B0%A8-%EB%B0%B0%ED%8F%AC-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8',
+          text: "[준승's 포트폴리오] 2차 배포 스프린트 회고",
+        },
+
       ],
-      readme: 'hi',
+      readme: 'https://github.com/turtle601/hwjs-portfolio',
     },
   ],
 });
