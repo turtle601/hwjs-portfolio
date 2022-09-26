@@ -11,7 +11,7 @@ import LinkButton from '../common/Link';
 import ResumeHeader from '@/components/resume/ResumeHeader';
 
 const ProjectContainer = styled.div`
-  ${ResumeStyle.Container}
+  width: 100%;
   margin-top: 5rem;
 `;
 

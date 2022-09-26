@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 
-import { ReactProps } from '@/types/common.types';
+import Project from '@/components/resume/Project';
+import Education from '@/components/resume/Eduction';
+import Share from '@/components/resume/Share';
+import FadeInSection from '../common/FadeInSection';
 
 const ResumeTemplateContainer = styled.div`
   width: 100%;
@@ -14,10 +17,28 @@ const ResumeTemplateContainer = styled.div`
   padding-bottom: 5rem;
 `;
 
-const ResumeTemplate: React.FC<ReactProps> = ({ children }) => {
+const ResumeTemplate: React.FC = () => {
+  const { current } = useRef(['edu', 'pj', 'share']);
+
   return (
     <ResumeTemplateContainer>
-      {children}
+      {
+        current.map((template) => {
+          return (
+            <FadeInSection>
+              {
+                template === 'edu' && <Education />
+              }
+              {
+                template === 'pj' && <Project />
+              }
+              {
+                template === 'share' && <Share />
+              }
+            </FadeInSection>
+          );
+        })
+      }
     </ResumeTemplateContainer>
   );
 };
