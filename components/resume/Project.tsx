@@ -10,7 +10,7 @@ import * as ResumeStyle from '@/stylesheets/resume';
 import LinkButton from '../common/Link';
 import ResumeHeader from '@/components/resume/ResumeHeader';
 
-const ProjectContainer = styled.div`
+const ProjectContainer = styled.article`
   ${ResumeStyle.Container}
   margin-top: 5rem;
 `;
