@@ -123,11 +123,11 @@ const Introduce: React.FC<ReactProps> = () => {
               기록과 공유를 좋아하는
             </IntroduceTitle>
             <IntroduceTitle>
-              <IntroduceName delay={1}>황준승</IntroduceName> 입니다.
+              <IntroduceName delay={0.5}>황준승</IntroduceName> 입니다.
             </IntroduceTitle>
-            <IntroduceDescription delay={2}>프론트엔드 개발자를 꿈꾸고 있습니다.</IntroduceDescription>
-            <IntroduceDescription delay={3}>배운 것을 기록하고 공유하는 것을 좋아합니다.</IntroduceDescription>
-            <IntroduceDescription delay={4}>
+            <IntroduceDescription delay={1}>프론트엔드 개발자를 꿈꾸고 있습니다.</IntroduceDescription>
+            <IntroduceDescription delay={1.5}>배운 것을 기록하고 공유하는 것을 좋아합니다.</IntroduceDescription>
+            <IntroduceDescription delay={2}>
               다른 사람들이 이해하기 쉽게 기록하고 공유하려고 노력합니다.
             </IntroduceDescription>
           </IntroduceTextBox>

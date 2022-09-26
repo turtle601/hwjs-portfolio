@@ -7,5 +7,5 @@ const fadeIn = keyframes`
 
 export const fadeInAnimated = css`
   opacity: 0;
-  animation: ${fadeIn} 2s both; 
+  animation: ${fadeIn} 1s both; 
 `;
