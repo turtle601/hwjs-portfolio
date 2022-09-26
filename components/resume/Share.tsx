@@ -10,8 +10,8 @@ import * as ResumeStyle from '@/stylesheets/resume';
 import ResumeHeader from '@/components/resume/ResumeHeader';
 
 const ShareContainer = styled.div`
+  width: 100%;
   margin-top: 5rem;
-  ${ResumeStyle.Container}
 `;
 
 const ShareTitle = styled.h3`

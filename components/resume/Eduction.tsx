@@ -10,7 +10,7 @@ import * as ResumeStyle from '@/stylesheets/resume';
 import ResumeHeader from '@/components/resume/ResumeHeader';
 
 const EducationContainer = styled.div`
-  ${ResumeStyle.Container}
+  width: 100%;
 `;
 
 const EducationTitle = styled.h3`

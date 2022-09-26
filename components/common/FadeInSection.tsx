@@ -2,13 +2,14 @@ import { useRef, useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { ReactProps } from '@/types/common.types';
 import { fadeInAnimated } from '@/stylesheets/animations';
+import { Container } from '@/stylesheets/resume';
 
 type FadeInSectionStyleProps = {
   isVisible : boolean;
 };
 
 const FadeInSectionStyle = styled.article<FadeInSectionStyleProps>`
-  width: 100%;
+  ${Container}
   opacity: 0;
 
   ${(props) => {
