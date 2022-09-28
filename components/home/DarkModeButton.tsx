@@ -1,10 +1,8 @@
 import React from 'react';
-import { useRecoilValue } from 'recoil';
 
 import oc from 'open-color';
 import styled from 'styled-components';
 import { ReactProps } from '@/types/common.types';
-import { themeState } from '@/atom/atom.theme';
 
 import Button from '@/components/common/Button';
 
@@ -16,10 +14,11 @@ const DarkModeStyledButton = styled(Button)`
 `;
 
 const DarkModeButton: React.FC<ReactProps> = () => {
-  const theme = useRecoilValue(themeState);
-  const [, toggleTheme] = useDarkMode();
+  const [theme, mounted, toggleTheme] = useDarkMode();
 
   const clikcDarkModeBtn = () => toggleTheme();
+
+  if (!mounted) return <div>Not Mounted!</div>;
 
   return (
     <DarkModeStyledButton variant="solid" colorScheme={oc.gray[5]} onClick={clikcDarkModeBtn}>
