@@ -3,7 +3,6 @@ import type { NextPage, GetStaticProps } from 'next';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
 import { ProjectAPI, ProjectResult } from '@/types/project.types';
 import { getNotionApi } from '@/api/getNotionApi';
 
@@ -11,16 +10,9 @@ import ProjectList from '@/components/project/ProjectList';
 import Layout from '@/components/common/Layout';
 
 const Project: NextPage = () => {
-  const [showChild, setShowChild] = useState(false);
   const project = useQuery<ProjectAPI<ProjectResult>>(['project'], async () => getNotionApi());
 
-  useEffect(() => {
-    setShowChild(true);
-  }, []);
-
-  if (!showChild) {
-    return null;
-  }
+  if (project.isLoading) return <div>로딩중입니다...</div>;
 
   return (
     <>
