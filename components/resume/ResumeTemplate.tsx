@@ -18,22 +18,26 @@ const ResumeTemplateContainer = styled.div`
 `;
 
 const ResumeTemplate: React.FC = () => {
-  const { current } = useRef(['edu', 'pj', 'share']);
+  const { current } = useRef([
+    { id: 1, text: 'edu' },
+    { id: 2, text: 'pj' },
+    { id: 3, text: 'shar' },
+  ]);
 
   return (
     <ResumeTemplateContainer>
       {
         current.map((template) => {
           return (
-            <FadeInSection>
+            <FadeInSection key={template.id}>
               {
-                template === 'edu' && <Education />
+                template.text === 'edu' && <Education />
               }
               {
-                template === 'pj' && <Project />
+                template.text === 'pj' && <Project />
               }
               {
-                template === 'share' && <Share />
+                template.text === 'share' && <Share />
               }
             </FadeInSection>
           );
