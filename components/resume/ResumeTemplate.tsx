@@ -21,7 +21,7 @@ const ResumeTemplate: React.FC = () => {
   const { current } = useRef([
     { id: 1, text: 'edu' },
     { id: 2, text: 'pj' },
-    { id: 3, text: 'shar' },
+    { id: 3, text: 'share' },
   ]);
 
   return (
