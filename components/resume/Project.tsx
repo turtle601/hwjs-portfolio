@@ -12,7 +12,7 @@ import ResumeHeader from '@/components/resume/ResumeHeader';
 
 const ProjectContainer = styled.div`
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 4rem;
 `;
 
 const ProjectTitle = styled.h3`
@@ -29,7 +29,7 @@ const ProjectExplain = styled.div`
 
 const ProjectContent = styled.ul`
   li + li {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
 `;
 
@@ -42,11 +42,7 @@ const ProjectReadmeTitle = styled.h4`
 `;
 
 const ProjectLinkStyleTag = styled.div`
-  margin-top: 1.2rem;
-
-  & + & {
-    margin-top: 1.2rem;
-  }
+  ${ResumeStyle.LinkStyletag}
 `;
 
 const Project: React.FC = () => {

@@ -13,8 +13,8 @@ const ResumeTemplateContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 `;
 
 const ResumeTemplate: React.FC = () => {

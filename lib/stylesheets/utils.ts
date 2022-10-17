@@ -1,18 +1,11 @@
 import { css } from 'styled-components';
 
-// media query
+// media size
 export const sizes = {
   wide: '1440px',
-  desktop: '992px',
+  desktop: '1024px',
   tablet: '768px',
-  phone: '376px',
-};
-
-export const media = {
-  wide: `(max-width: ${sizes.wide})`,
-  desktop: `(max-width: ${sizes.desktop})`,
-  tablet: `(max-width: ${sizes.tablet})`,
-  phone: `(max-width: ${sizes.phone})`,
+  iphone: '500px',
 };
 
 // shodow
