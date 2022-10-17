@@ -1,14 +1,12 @@
 import React from 'react';
 
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import oc from 'open-color';
 
-import { shadow, sizes } from '@/stylesheets/utils';
 import { ReactProps } from '@/types/common.types';
 
 import LinkButton from '@/components/common/Link';
-
-import DarkModeButton from '@/components/home/DarkModeButton';
+import { shadow, sizes } from '@/stylesheets/utils';
 
 const HeaderContainer = styled.div`
   position: sticky;
@@ -17,32 +15,38 @@ const HeaderContainer = styled.div`
   
   width: 100%;
   height: auto;
-  
-  display: flex;
-  justify-content: center;
   z-index: 10;
   
   ${shadow(1)}
 `;
 
-const HeaderContents = styled.header`
-  width: ${sizes.wide};
-  height: 55px;
+const Responsive = styled.div`
+  width: 100%;
+
+  @media screen and (min-width: ${sizes.wide}){
+    width: ${sizes.wide};
+  }
+
+  margin: 0 auto;
+`;
+
+const HeaderContent = styled.div`
+  width: 100%;
+
   display: flex;
-  flex-direction: row;
   align-items: center;
 
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 1rem;
 
-  @media ${sizes.wide} {
-    width: 100%;
+  @media only screen and (max-width: 600px){
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;
 
 const Logo = styled.h1`
   background-color: inherit;
-  white-space: nowrap;
+  flex-wrap: nowrap;
   font-size: 1.4rem;
   letter-spacing: 2px;
   color: ${({ theme }) => theme.primary};
@@ -53,15 +57,10 @@ const Spacer = styled.div`
   flex-grow: 1;
 `;
 
-const GradientBorder = styled.div`
-  height: 3px;
-
-  ${({ theme }) => css`
-    background: linear-gradient(to right, ${theme.primary}, ${theme.secondary});
-  `}
-`;
-
 const BtnNavbar = styled.nav`
+  display: flex;
+  flex-wrap: nowrap;
+
   a + a {
     margin-left: 1.2rem;
   }
@@ -69,23 +68,51 @@ const BtnNavbar = styled.nav`
   a + button {
     margin-left: 1.2rem;
   }
+
+  @media only screen and (max-width: 600px){
+    width: 100%;
+
+    flex-direction: column;
+    margin-top: 1rem;
+
+    a + a {
+      margin-left: 0rem;
+      border-top: 1px solid ${oc.gray[5]};
+    }
+
+    a + button {
+      margin-left: 0rem;
+      border-top: 1px solid black;
+    }
+  }
+`;
+
+const HeaderLinkButton = styled(LinkButton)`
+  @media only screen and (max-width: 600px){
+    width: 100%;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
 `;
 
 const Header: React.FC<ReactProps> = () => {
   return (
+
     <HeaderContainer>
-      <HeaderContents>
-        <Logo>준승 portfolio</Logo>
-        <Spacer />
-        <BtnNavbar>
-          <LinkButton href="/" variant="link" colorScheme={oc.cyan[6]} target={false}>홈</LinkButton>
-          <LinkButton href="/project" variant="link" colorScheme={oc.cyan[6]} target={false}>프로젝트</LinkButton>
-          <LinkButton href="/resume" variant="link" colorScheme={oc.cyan[6]} target={false}>내 소개</LinkButton>
-          <DarkModeButton />
-        </BtnNavbar>
-      </HeaderContents>
-      <GradientBorder />
+      <Responsive>
+        <HeaderContent>
+          <Logo>준승 portfolio</Logo>
+          <Spacer />
+          <BtnNavbar>
+            <HeaderLinkButton href="/" variant="link" colorScheme={oc.cyan[6]} target={false}>홈</HeaderLinkButton>
+            <HeaderLinkButton href="/project" variant="link" colorScheme={oc.cyan[6]} target={false}>프로젝트</HeaderLinkButton>
+            <HeaderLinkButton href="/resume" variant="link" colorScheme={oc.cyan[6]} target={false}>내 소개</HeaderLinkButton>
+          </BtnNavbar>
+        </HeaderContent>
+      </Responsive>
+
     </HeaderContainer>
+
   );
 };
 
