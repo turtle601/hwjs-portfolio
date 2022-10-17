@@ -5,7 +5,7 @@ import oc from 'open-color';
 import { ReactProps } from '@/types/common.types';
 
 import { fadeInAnimated } from '@/stylesheets/animations';
-import { sizes, media } from '@/stylesheets/utils';
+import { sizes } from '@/stylesheets/utils';
 
 import LottieAni from '@/components/home/LottiAni';
 import Blind from '@/components/common/Blind';
@@ -57,7 +57,7 @@ const IntroduceTitle = styled.h2`
   
   @media only screen and (min-width: ${sizes.tablet}) and (max-width: ${sizes.desktop}) {
     font-size: 2rem;
-    line-height: 3rem;
+    line-height: 4rem;
   }
 
   @media only screen and (max-width: ${sizes.tablet}) {
@@ -107,10 +107,6 @@ const IntroduceDescription = styled.p<{ delay: number }>`
 const InroduceImgBox = styled.div`
   position: relative;
   width: 50%;
-
-  @media ${media.tablet} {
-    width: 100%;
-  }
 `;
 
 const Introduce: React.FC<ReactProps> = () => {

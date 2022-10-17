@@ -20,7 +20,7 @@ const HeaderContainer = styled.div`
   ${shadow(1)}
 `;
 
-const Responsive = styled.div`
+const HeaderResponsive = styled.div`
   width: 100%;
 
   @media screen and (min-width: ${sizes.wide}){
@@ -97,9 +97,8 @@ const HeaderLinkButton = styled(LinkButton)`
 
 const Header: React.FC<ReactProps> = () => {
   return (
-
     <HeaderContainer>
-      <Responsive>
+      <HeaderResponsive>
         <HeaderContent>
           <Logo>준승 portfolio</Logo>
           <Spacer />
@@ -109,8 +108,7 @@ const Header: React.FC<ReactProps> = () => {
             <HeaderLinkButton href="/resume" variant="link" colorScheme={oc.cyan[6]} target={false}>내 소개</HeaderLinkButton>
           </BtnNavbar>
         </HeaderContent>
-      </Responsive>
-
+      </HeaderResponsive>
     </HeaderContainer>
 
   );
