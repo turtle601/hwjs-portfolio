@@ -4,37 +4,37 @@ import { useQuery } from '@tanstack/react-query';
 import ProjectItem from './ProjectItem';
 import { ProjectAPI, ProjectResult } from '@/types/project.types';
 
-import { media, sizes } from '@/stylesheets/utils';
+import { sizes } from '@/stylesheets/utils';
 
-const ProjectListContainer = styled.div`
+const ProjectListResponsive = styled.div`
   width: 100%;
 
-  display: flex;
-  flex-direction: column;
+  @media only screen and (min-width: ${sizes.wide}) {
+    width: ${sizes.wide};
+  }
 
-  margin-top: 10rem;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  height: auto;
+  margin: 2rem auto;
 `;
 
 const ProjectGrid = styled.div`
-  width: ${sizes.wide};
+  width: 100%;
 
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   
-  gap: 2px;
+  gap: 12px;
 
-  @media ${media.wide} {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media only screen and (min-width: ${sizes.tablet}) and (max-width: ${sizes.desktop}) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
   }
 
-  @media ${media.tablet} {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+  @media only screen and (max-width: ${sizes.tablet}) {
+    display: flex;
+    justify-content: center;
   }
 `;
 
@@ -46,17 +46,15 @@ const ProjectList: React.FC<ProjectListProps> = ({ pj }) => {
   const { data } = pj;
 
   return (
-    <ProjectListContainer>
-      <Wrapper>
-        <ProjectGrid>
-          {
+    <ProjectListResponsive>
+      <ProjectGrid>
+        {
           data?.results.map((project) => (
             <ProjectItem key={project.id} project={project} />
           ))
         }
-        </ProjectGrid>
-      </Wrapper>
-    </ProjectListContainer>
+      </ProjectGrid>
+    </ProjectListResponsive>
   );
 };
 

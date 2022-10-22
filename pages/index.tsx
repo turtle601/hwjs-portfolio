@@ -11,6 +11,7 @@ const Home: NextPage = () => {
         <Helmet>
           <meta lang="ko" />
           <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="description" content="이 문서는 준승의 프로젝트 소개 페이지입니다." />
           <meta name="author" content="황준승" />
           <title>준승&apos;s potofolio</title>

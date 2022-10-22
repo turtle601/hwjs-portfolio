@@ -8,21 +8,20 @@ import Blind from '@/components/common/Blind';
 import LinkButton from '@/components/common/Link';
 
 const ProjectItemContainer = styled.li`
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   border: none;
 
   color: ${oc.gray[8]};
-
-  min-width: 300px;
   
   padding : 1rem;
-  margin: 3rem;
   
   background-color: ${oc.gray[5]};
   border-radius: 0.5rem;  
 
-  height: 300px;
+  height: 240px;
   
   ${shadow(2)};
 
@@ -30,7 +29,6 @@ const ProjectItemContainer = styled.li`
 
   &:hover {
     transform: scale(1.2);
-    border: 1px solid #d1d5db;
   }
 `;
 
