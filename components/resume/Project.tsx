@@ -69,8 +69,8 @@ const Project: React.FC = () => {
                   return ((worry.link === null)
                     ? <ProjectExplain key={worry.text}>{worry.text}</ProjectExplain>
                     : (
-                      <ProjectLinkStyleTag>
-                        <LinkButton key={worry.text} variant="underline" href={worry.link} target>
+                      <ProjectLinkStyleTag key={worry.text}>
+                        <LinkButton variant="underline" href={worry.link} target>
                           <ProjectExplain>
                             {worry.text}
                           </ProjectExplain>
