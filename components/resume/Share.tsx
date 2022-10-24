@@ -18,6 +18,10 @@ const ShareTitle = styled.h3`
   ${ResumeStyle.Title}
 `;
 
+const LinkStyle = styled.a`
+  text-decoration: underline;
+`;
+
 const ShareType = styled.div`
   ${ResumeStyle.Type}
 `;
@@ -44,7 +48,9 @@ const Share: React.FC = () => {
             return (
               <li key={share.id}>
                 <ShareType>{share.type}</ShareType>
-                <ShareTitle>{share.title}</ShareTitle>
+                <ShareTitle>
+                  <LinkStyle href="https://velog.io/@turtle601" target="_blank">{share.title}</LinkStyle>
+                </ShareTitle>
                 {
                   share.explains.map((explain) => {
                     return <ShareExplain key={explain}>{explain}</ShareExplain>;
