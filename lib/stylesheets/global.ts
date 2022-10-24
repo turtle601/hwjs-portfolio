@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
+    font-family: 'Jua', sans-serif;
   }
 
   body {
