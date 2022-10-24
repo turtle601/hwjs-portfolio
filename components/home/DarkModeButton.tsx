@@ -8,9 +8,14 @@ import Button from '@/components/common/Button';
 
 import { useDarkMode } from '@/hooks/useDarkMode';
 import Blind from '../common/Blind';
+import { shadow } from '@/stylesheets/utils';
 
 const DarkModeStyledButton = styled(Button)`
   position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 20%;
+  ${shadow(1)}
 `;
 
 const DarkModeButton: React.FC<ReactProps> = () => {
