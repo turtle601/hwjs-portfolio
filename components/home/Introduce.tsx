@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import oc from 'open-color';
 
+import LinkButton from '@/components/common/Link';
 import { ReactProps } from '@/types/common.types';
 
 import { fadeInAnimated } from '@/stylesheets/animations';
@@ -109,6 +110,23 @@ const InroduceImgBox = styled.div`
   width: 50%;
 `;
 
+const LinkButtonBox = styled.div`
+  width: 100%;
+
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  a + a {
+    margin-top: 1rem;
+  }
+
+  @media only screen and (max-width: ${sizes.wide}) {
+    align-items: center;
+  }
+`;
+
 const Introduce: React.FC<ReactProps> = () => {
   return (
     <IntroduceResponsive>
@@ -125,6 +143,10 @@ const Introduce: React.FC<ReactProps> = () => {
           <IntroduceDescription delay={2}>
             다른 사람들이 이해하기 쉽게 기록하고 공유하려고 노력합니다.
           </IntroduceDescription>
+          <LinkButtonBox>
+            <LinkButton href="/project" variant="solid" colorScheme={oc.cyan[6]} target={false}>프로젝트 보러가기</LinkButton>
+            <LinkButton href="/resume" variant="solid" colorScheme={oc.cyan[6]} target={false}>준승 이력서 보러가기</LinkButton>
+          </LinkButtonBox>
         </IntroduceTextBox>
         <InroduceImgBox>
           <Blind>코딩하는 애니메이션 이미지</Blind>
