@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import type { NextPage, GetStaticProps } from 'next';
 
 import { Helmet, HelmetProvider } from 'react-helmet-async';
@@ -10,9 +11,18 @@ import ProjectList from '@/components/project/ProjectList';
 import Layout from '@/components/common/Layout';
 
 const Project: NextPage = () => {
+  const [showChild, setShowChild] = useState(false);
   const project = useQuery<ProjectAPI<ProjectResult>>(['project'], async () => getNotionApi());
 
-  if (project.isLoading) return <div>로딩중입니다...</div>;
+    // 클라이언트 측 하이드레이션이 표시될 때까지 대기
+    useEffect(() => {
+      setShowChild(true);
+    }, []);
+
+    if (!showChild) {
+      // 처음 자리표시자 UI를 표시할 수 있다.
+      return null;
+    }
 
   return (
     <>
