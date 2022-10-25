@@ -63,6 +63,8 @@ export const pjState = atom<PjType []>({
         '나만의 포트폴리오를 만들기 위해 제작',
         '다크모드 구현',
         'notion api 를 사용하여 프로젝트 정보 렌더링하기',
+        '이력서 페이지 스크롤 시 페이드인 효과 구현',
+        '모바일 반응형 구현',
       ],
       worries: [
         {
@@ -72,6 +74,10 @@ export const pjState = atom<PjType []>({
         {
           link: 'https://velog.io/@turtle601/%EC%A4%80%EC%8A%B9-portfolio-2%EC%B0%A8-%EB%B0%B0%ED%8F%AC-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8',
           text: "[준승's 포트폴리오] 2차 배포 스프린트 회고",
+        },
+        {
+          link: 'https://velog.io/@turtle601/%EC%A4%80%EC%8A%B9s-portfolio-3%EC%B0%A8-%EB%B0%B0%ED%8F%AC-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8',
+          text: "[준승's 포트폴리오] 3차 배포 스프린트 회고",
         },
 
       ],
