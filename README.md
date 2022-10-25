@@ -96,6 +96,8 @@
 - 다크 모드 구현
 - Notion API를 통해서 Project 데이터 받아오고 렌더링하기 [Project Page]
 - 내 이력서 보여주기 [Resume Page]
+- 이력서 페이지 스크롤 시 페이드인 효과
+- 모바일 반응형 구현
 
 <br />
 
@@ -103,3 +105,5 @@
 - [1차 배포 회고](https://velog.io/@turtle601/%EC%A4%80%EC%8A%B9s-portfolio-1%EC%B0%A8-%EB%B0%B0%ED%8F%AC-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8)
 
 - [2차 배포 회고](https://velog.io/@turtle601/%EC%A4%80%EC%8A%B9-portfolio-2%EC%B0%A8-%EB%B0%B0%ED%8F%AC-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8)
+
+- [3차 배포 회고](https://velog.io/@turtle601/%EC%A4%80%EC%8A%B9s-portfolio-3%EC%B0%A8-%EB%B0%B0%ED%8F%AC-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8)
